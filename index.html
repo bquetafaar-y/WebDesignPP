@@ -9,7 +9,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css">
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js" defer></script>
+  <script src="main.js" defer></script>
 </head>
 <body class="bg-slate-50 font-[Inter,sans-serif] text-base leading-6 text-slate-900 antialiased">
 
@@ -52,7 +58,7 @@
     <section class="bg-slate-50" aria-labelledby="hero-title">
       <div class="mx-auto grid max-w-6xl items-center gap-10 px-5 py-12 md:py-16 lg:grid-cols-2 lg:gap-16 lg:py-20">
         <div class="max-w-xl text-left">
-          <p class="text-sm font-semibold text-teal-700">Приватна клініка поруч</p>
+          <p class="text-sm font-semibold text-teal-700"><span id="hero-typed" aria-hidden="true">Приватна клініка поруч</span><span class="sr-only">Приватна клініка поруч</span></p>
           <h1 id="hero-title" class="mt-3 text-4xl font-bold tracking-tight text-slate-900 lg:text-5xl lg:leading-tight">Медична допомога у вас вдома</h1>
           <p class="mt-4 text-base leading-6 text-slate-700 lg:text-lg lg:leading-7">Турботлива медична допомога від кваліфікованих фахівців — там і тоді, коли вам зручно. Запис займає кілька хвилин.</p>
           <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
@@ -152,7 +158,83 @@
       </div>
     </section>
 
-    <!-- 5. TESTIMONIALS -->
+    <!-- 5. CAREPOINT SLIDER -->
+    <section class="bg-white" aria-labelledby="carepoint-slider-title">
+      <div class="mx-auto max-w-6xl px-5 py-12 md:py-16">
+        <p class="text-sm font-semibold text-teal-700">CarePoint поруч</p>
+        <h2 id="carepoint-slider-title" class="mt-2 max-w-2xl text-2xl font-semibold text-slate-900 md:text-3xl">Турбота на кожному етапі</h2>
+        <p class="mt-3 max-w-2xl text-base leading-6 text-slate-700">П’ять напрямів допомоги — оберіть той, що потрібен саме вам.</p>
+
+        <div class="carepoint-swiper swiper mt-8" role="region" aria-roledescription="карусель" aria-label="Напрями медичної допомоги">
+          <div class="swiper-wrapper">
+            <article class="swiper-slide carepoint-slide rounded-xl border border-slate-200 bg-slate-50 p-5">
+              <img class="carepoint-slide__image" src="assets/images/carHome.png" alt="Лікарка оглядає пацієнтку вдома" loading="lazy">
+              <h3 class="mt-4 text-lg font-semibold text-slate-900">Лікар удома</h3>
+              <p class="mt-2 text-sm leading-6 text-slate-700">Професійний огляд і рекомендації у звичному для вас середовищі.</p>
+            </article>
+            <article class="swiper-slide carepoint-slide rounded-xl border border-slate-200 bg-slate-50 p-5">
+              <img class="carepoint-slide__image" src="assets/images/carPed.png" alt="Педіатр оглядає дитину" loading="lazy">
+              <h3 class="mt-4 text-lg font-semibold text-slate-900">Педіатрична допомога</h3>
+              <p class="mt-2 text-sm leading-6 text-slate-700">Уважна турбота про здоров’я дітей та підтримка для батьків.</p>
+            </article>
+            <article class="swiper-slide carepoint-slide rounded-xl border border-slate-200 bg-slate-50 p-5">
+              <img class="carepoint-slide__image" src="assets/images/cerOnl.png" alt="Лікар проводить онлайн-консультацію" loading="lazy">
+              <h3 class="mt-4 text-lg font-semibold text-slate-900">Онлайн-консультація</h3>
+              <p class="mt-2 text-sm leading-6 text-slate-700">Поговоріть із лікарем дистанційно та отримайте план подальших дій.</p>
+            </article>
+            <article class="swiper-slide carepoint-slide rounded-xl border border-slate-200 bg-slate-50 p-5">
+              <img class="carepoint-slide__image" src="assets/images/carLab.png" alt="Фахівчиня готує лабораторний аналіз" loading="lazy">
+              <h3 class="mt-4 text-lg font-semibold text-slate-900">Лабораторні аналізи</h3>
+              <p class="mt-2 text-sm leading-6 text-slate-700">Забір аналізів удома та доступ до результатів у вашому кабінеті.</p>
+            </article>
+            <article class="swiper-slide carepoint-slide rounded-xl border border-slate-200 bg-slate-50 p-5">
+              <img class="carepoint-slide__image" src="assets/images/carSup.png" alt="Фахівчиня служби підтримки CarePoint" loading="lazy">
+              <h3 class="mt-4 text-lg font-semibold text-slate-900">Підтримка пацієнтів</h3>
+              <p class="mt-2 text-sm leading-6 text-slate-700">Допоможемо зорієнтуватися в послугах і спланувати наступний крок.</p>
+            </article>
+          </div>
+          <div class="carepoint-slider-controls">
+            <button class="carepoint-swiper__prev" type="button" aria-label="Попередній слайд">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg>
+            </button>
+            <div class="carepoint-swiper__pagination" aria-label="Пагінація слайдера"></div>
+            <button class="carepoint-swiper__next" type="button" aria-label="Наступний слайд">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. FANCYBOX GALLERY: замініть href на шлях до власного фото -->
+    <section class="bg-blue-50" aria-labelledby="carepoint-gallery-title">
+      <div class="mx-auto max-w-6xl px-5 py-12 md:py-16">
+        <p class="text-sm font-semibold text-teal-700">Фотогалерея</p>
+        <h2 id="carepoint-gallery-title" class="mt-2 max-w-2xl text-2xl font-semibold text-slate-900 md:text-3xl">Клініка та команда</h2>
+        <div class="carepoint-gallery mt-8">
+          <a class="carepoint-gallery__item" href="assets/images/interior.png" data-fancybox="carepoint-gallery" data-caption="Інтер’єр медичного центру CarePoint" aria-label="Інтер’єр медичного центру CarePoint">
+            <img class="carepoint-gallery__image" src="assets/images/interior.png" alt="Інтер’єр медичного центру CarePoint" loading="lazy">
+          </a>
+          <a class="carepoint-gallery__item" href="assets/images/staff1.png" data-fancybox="carepoint-gallery" data-caption="Терапевт — проводить загальну діагностику, лікує поширені захворювання та допомагає підтримувати здоров’я." aria-label="Терапевт — проводить загальну діагностику, лікує поширені захворювання та допомагає підтримувати здоров’я.">
+            <img class="carepoint-gallery__image" src="assets/images/staff1.png" alt="Лікарка CarePoint" loading="lazy">
+          </a>
+          <a class="carepoint-gallery__item" href="assets/images/staff2.png" data-fancybox="carepoint-gallery" data-caption="Кардіолог — діагностує та лікує захворювання серця і серцево-судинної системи." aria-label="Кардіолог — діагностує та лікує захворювання серця і серцево-судинної системи.">
+            <img class="carepoint-gallery__image" src="assets/images/staff2.png" alt="Лікар CarePoint" loading="lazy">
+          </a>
+          <a class="carepoint-gallery__item" href="assets/images/staff3.png" data-fancybox="carepoint-gallery" data-caption="Педіатр — піклується про здоров’я дітей, проводить огляди та лікує дитячі захворювання." aria-label="Педіатр — піклується про здоров’я дітей, проводить огляди та лікує дитячі захворювання.">
+            <img class="carepoint-gallery__image" src="assets/images/staff3.png" alt="Педіатр CarePoint" loading="lazy">
+          </a>
+          <a class="carepoint-gallery__item" href="assets/images/staff4.png" data-fancybox="carepoint-gallery" data-caption="Лікар лабораторної діагностики — проводить і контролює лабораторні дослідження для точної діагностики." aria-label="Лікар лабораторної діагностики — проводить і контролює лабораторні дослідження для точної діагностики.">
+            <img class="carepoint-gallery__image" src="assets/images/staff4.png" alt="Лікар лабораторної діагностики CarePoint" loading="lazy">
+          </a>
+          <a class="carepoint-gallery__item" href="assets/images/staff5.png" data-fancybox="carepoint-gallery" data-caption="Медична сестра — допомагає лікарям, проводить медичні процедури та піклується про комфорт пацієнтів." aria-label="Медична сестра — допомагає лікарям, проводить медичні процедури та піклується про комфорт пацієнтів.">
+            <img class="carepoint-gallery__image" src="assets/images/staff5.png" alt="Фахівчиня CarePoint" loading="lazy">
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. TESTIMONIALS -->
     <section class="bg-blue-50" aria-labelledby="reviews-title">
       <div class="mx-auto max-w-6xl px-5 py-12 md:py-16">
         <h2 id="reviews-title" class="max-w-2xl text-2xl font-semibold text-slate-900 md:text-3xl">Що кажуть пацієнти</h2>
@@ -179,7 +261,7 @@
       </div>
     </section>
 
-    <!-- 6. CTA -->
+    <!-- 8. CTA -->
     <section id="booking" class="scroll-mt-4" aria-labelledby="cta-title">
       <div class="mx-auto max-w-6xl px-5 py-12 md:py-16">
         <div class="rounded-2xl bg-[#1E5BB8] px-6 py-10 text-white md:px-12 md:py-14">
@@ -202,7 +284,7 @@
 
   </main>
 
-  <!-- 7. FOOTER (з ЛР №6) -->
+  <!-- 9. FOOTER (з ЛР №6) -->
   <footer id="help" class="bg-slate-900 text-white">
     <div class="mx-auto max-w-6xl px-5 py-14">
       <div class="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-4">
