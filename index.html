@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="uk" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Медичний центр CarePoint — приватна клініка та онлайн-запис до лікаря</title>
+  <meta name="description" content="CarePoint: візит лікаря додому, телемедицина та лабораторні аналізи. Прозорі ціни й запис за кілька хвилин.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+</head>
+<body class="bg-slate-50 font-[Inter,sans-serif] text-base leading-6 text-slate-900 antialiased">
+
+  <a class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-white focus:px-4 focus:py-2 focus:text-[#1E5BB8]" href="#main-content">Перейти до основного вмісту</a>
+
+  <!-- 1. HEADER (з ЛР №6) -->
+  <header class="border-b border-slate-200 bg-white">
+    <div class="mx-auto flex max-w-6xl items-center justify-between gap-6 px-5 py-3">
+      <a class="shrink-0 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1E5BB8] focus-visible:ring-offset-2" href="index.html" aria-label="CarePoint — на головну">
+        <img class="block h-auto w-40" src="assets/icons/carepoint-logo.png" width="720" height="163" alt="">
+      </a>
+      <nav class="hidden flex-1 items-center justify-center md:flex" aria-label="Головна навігація">
+        <ul class="flex flex-wrap items-center justify-center gap-6">
+          <li><a class="rounded-sm text-sm font-medium text-slate-700 transition-colors hover:text-[#17489A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1E5BB8] focus-visible:ring-offset-2" href="#services">Послуги та ціни</a></li>
+          <li><a class="rounded-sm text-sm font-medium text-slate-700 transition-colors hover:text-[#17489A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1E5BB8] focus-visible:ring-offset-2" href="#help">Допомога та контакти</a></li>
+          <li><a class="rounded-sm text-sm font-medium text-slate-700 transition-colors hover:text-[#17489A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1E5BB8] focus-visible:ring-offset-2" href="/account">Мій кабінет</a></li>
+        </ul>
+      </nav>
+      <a class="hidden min-h-11 shrink-0 items-center justify-center rounded-lg bg-[#1E5BB8] px-6 py-3 text-base font-semibold text-white transition-colors hover:bg-[#17489A] active:bg-[#123B7E] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1E5BB8] focus-visible:ring-offset-2 md:inline-flex" href="#booking">Записатися</a>
+      <details class="group relative ml-auto md:hidden">
+        <summary class="block cursor-pointer list-none rounded-md p-2 text-slate-800 transition-colors hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1E5BB8] focus-visible:ring-offset-2">
+          <span class="sr-only">Навігаційне меню</span>
+          <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </summary>
+        <nav class="absolute right-0 top-full z-50 mt-2 min-w-64 rounded-lg border border-slate-200 bg-white p-3 shadow-lg" aria-label="Мобільна навігація">
+          <ul class="flex flex-col gap-1">
+            <li><a class="block rounded-md px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-[#17489A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1E5BB8]" href="#services">Послуги та ціни</a></li>
+            <li><a class="block rounded-md px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-[#17489A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1E5BB8]" href="#help">Допомога та контакти</a></li>
+            <li><a class="block rounded-md px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-[#17489A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1E5BB8]" href="/account">Мій кабінет</a></li>
+            <li class="pt-2"><a class="flex min-h-11 items-center justify-center rounded-lg bg-[#1E5BB8] px-6 py-3 text-base font-semibold text-white transition-colors hover:bg-[#17489A] active:bg-[#123B7E] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1E5BB8] focus-visible:ring-offset-2" href="#booking">Записатися</a></li>
+          </ul>
+        </nav>
+      </details>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- 2. HERO -->
+    <section class="bg-slate-50" aria-labelledby="hero-title">
+      <div class="mx-auto grid max-w-6xl items-center gap-10 px-5 py-12 md:py-16 lg:grid-cols-2 lg:gap-16 lg:py-20">
+        <div class="max-w-xl text-left">
+          <p class="text-sm font-semibold text-teal-700">Приватна клініка поруч</p>
+          <h1 id="hero-title" class="mt-3 text-4xl font-bold tracking-tight text-slate-900 lg:text-5xl lg:leading-tight">Медична допомога у вас вдома</h1>
+          <p class="mt-4 text-base leading-6 text-slate-700 lg:text-lg lg:leading-7">Турботлива медична допомога від кваліфікованих фахівців — там і тоді, коли вам зручно. Запис займає кілька хвилин.</p>
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <a class="inline-flex min-h-11 items-center justify-center rounded-lg bg-[#1E5BB8] px-6 py-3 text-base font-semibold text-white transition-colors hover:bg-[#17489A] active:bg-[#123B7E] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1E5BB8] focus-visible:ring-offset-2" href="#booking">Записатися на прийом</a>
+            <a class="inline-flex min-h-11 items-center justify-center rounded-lg border border-slate-300 bg-white px-6 py-3 text-base font-semibold text-[#1E5BB8] transition-colors hover:bg-blue-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1E5BB8] focus-visible:ring-offset-2" href="#services">Переглянути послуги</a>
+          </div>
+        </div>
+        <img class="h-auto w-full max-w-md justify-self-center rounded-2xl object-cover lg:justify-self-end" src="assets/images/06_doctor_patient.png" width="443" height="490" alt="Лікар показує пацієнтці дані на планшеті під час консультації">
+      </div>
+    </section>
+
+    <!-- 3. BENEFITS -->
+    <section class="bg-blue-50" aria-labelledby="benefits-title">
+      <div class="mx-auto max-w-6xl px-5 py-12 md:py-16">
+        <h2 id="benefits-title" class="max-w-2xl text-2xl font-semibold text-slate-900 md:text-3xl">Чому пацієнти обирають CarePoint</h2>
+        <ul class="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <li class="rounded-xl bg-white p-6 shadow-sm">
+            <img class="mb-4 h-12 w-12 object-contain" src="assets/icons/securityl3.png" alt="" width="48" height="48">
+            <h3 class="text-lg font-semibold text-slate-900">Турбота вдома</h3>
+            <p class="mt-2 text-sm leading-6 text-slate-700">Зручна допомога поруч: лікар приїжджає до вас, а прості питання можна вирішити онлайн.</p>
+          </li>
+          <li class="rounded-xl bg-white p-6 shadow-sm">
+            <img class="mb-4 h-12 w-12 object-contain" src="assets/icons/analyticsl3.png" alt="" width="48" height="48">
+            <h3 class="text-lg font-semibold text-slate-900">Прозорі ціни</h3>
+            <p class="mt-2 text-sm leading-6 text-slate-700">Вартість відома заздалегідь. Остаточну суму ви бачите перед підтвердженням запису.</p>
+          </li>
+          <li class="rounded-xl bg-white p-6 shadow-sm md:col-span-2 lg:col-span-1">
+            <img class="mb-4 h-12 w-12 object-contain" src="assets/icons/speedl3.png" alt="" width="48" height="48">
+            <h3 class="text-lg font-semibold text-slate-900">Щоденна підтримка</h3>
+            <p class="mt-2 text-sm leading-6 text-slate-700">Ми на зв’язку сім днів на тиждень. Результати й рекомендації зберігаються у вашому кабінеті.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 4. SERVICES (Card + Grid з ЛР №6) -->
+    <section id="services" class="scroll-mt-4" aria-labelledby="services-title">
+      <div class="mx-auto max-w-6xl px-5 py-12 md:py-16">
+        <p class="text-sm font-semibold text-teal-700">Послуги та ціни</p>
+        <h2 id="services-title" class="mt-2 max-w-2xl text-2xl font-semibold text-slate-900 md:text-3xl">Зрозуміла вартість медичної допомоги</h2>
+        <p class="mt-3 max-w-2xl text-base leading-6 text-slate-700">Ціна — орієнтовна, остаточна залежить від відстані та складності. Її підтверджують перед записом.</p>
+
+        <ul class="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <li>
+            <article class="flex h-full flex-col rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md focus-within:ring-2 focus-within:ring-[#1E5BB8]">
+              <img class="mb-5 h-48 w-full rounded-lg object-cover object-top" src="assets/images/01_general_practitioner.png" width="440" height="490" alt="Лікарка в білому халаті зі стетоскопом за столом" loading="lazy">
+              <h3 class="text-xl font-semibold text-slate-900">Візит лікаря додому</h3>
+              <p class="mt-2 text-sm leading-6 text-slate-700">Огляд, план лікування та електронний рецепт без поїздки до клініки.</p>
+              <ul class="mb-6 mt-4 flex flex-col gap-1 text-sm leading-6 text-slate-700">
+                <li>Огляд терапевта</li><li>План лікування</li><li>Електронний рецепт</li>
+              </ul>
+              <p class="mt-auto border-t border-slate-200 pt-4 text-2xl font-bold text-slate-900">від 900 ₴ <span class="text-sm font-normal text-slate-600">/ візит</span></p>
+              <a class="mt-4 inline-flex min-h-11 items-center justify-center rounded-lg bg-[#1E5BB8] px-6 py-3 text-base font-semibold text-white transition-colors hover:bg-[#17489A] active:bg-[#123B7E] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1E5BB8] focus-visible:ring-offset-2" href="#booking">Записатися на візит<span class="sr-only"> лікаря додому</span></a>
+            </article>
+          </li>
+          <li>
+            <article class="flex h-full flex-col rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md focus-within:ring-2 focus-within:ring-[#1E5BB8]">
+              <img class="mb-5 h-48 w-full rounded-lg object-cover object-top" src="assets/images/02_pediatric_visit (1).png" width="440" height="490" alt="Педіатр слухає дитину стетоскопом, поруч мама" loading="lazy">
+              <h3 class="text-xl font-semibold text-slate-900">Педіатрична допомога</h3>
+              <p class="mt-2 text-sm leading-6 text-slate-700">Огляд і рекомендації для дитини без черг та поїздок до клініки.</p>
+              <ul class="mb-6 mt-4 flex flex-col gap-1 text-sm leading-6 text-slate-700">
+                <li>Огляд педіатра</li><li>Рекомендації для батьків</li><li>Контроль стану</li>
+              </ul>
+              <p class="mt-auto border-t border-slate-200 pt-4 text-2xl font-bold text-slate-900">від 1100 ₴ <span class="text-sm font-normal text-slate-600">/ візит</span></p>
+              <a class="mt-4 inline-flex min-h-11 items-center justify-center rounded-lg bg-[#1E5BB8] px-6 py-3 text-base font-semibold text-white transition-colors hover:bg-[#17489A] active:bg-[#123B7E] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1E5BB8] focus-visible:ring-offset-2" href="#booking">Записатися до педіатра</a>
+            </article>
+          </li>
+          <li class="sm:col-span-2 lg:col-span-1">
+            <article class="flex h-full flex-col rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md focus-within:ring-2 focus-within:ring-[#1E5BB8]">
+              <img class="mb-5 h-48 w-full rounded-lg object-cover object-top" src="assets/images/04_telemedicine.png" width="440" height="490" alt="Жінка спілкується з лікарем по відеозв’язку на ноутбуці" loading="lazy">
+              <h3 class="text-xl font-semibold text-slate-900">Телемедицина</h3>
+              <p class="mt-2 text-sm leading-6 text-slate-700">Відповіді лікаря та план лікування без поїздки до клініки.</p>
+              <ul class="mb-6 mt-4 flex flex-col gap-1 text-sm leading-6 text-slate-700">
+                <li>До 30 хвилин із лікарем</li><li>Медичний висновок у кабінеті</li><li>Захищений відеозв’язок</li>
+              </ul>
+              <p class="mt-auto border-t border-slate-200 pt-4 text-2xl font-bold text-slate-900">від 600 ₴ <span class="text-sm font-normal text-slate-600">/ консультація</span></p>
+              <a class="mt-4 inline-flex min-h-11 items-center justify-center rounded-lg bg-[#1E5BB8] px-6 py-3 text-base font-semibold text-white transition-colors hover:bg-[#17489A] active:bg-[#123B7E] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1E5BB8] focus-visible:ring-offset-2" href="#booking">Обрати лікаря</a>
+            </article>
+          </li>
+        </ul>
+        <article class="mt-6 grid grid-cols-1 items-center gap-6 rounded-xl border border-slate-200 bg-white p-6 shadow-sm md:grid-cols-2">
+          <img class="h-48 w-full rounded-lg object-cover md:h-56" src="assets/images/03_lab_tests.png" width="443" height="492" alt="Медик у рукавичках готує пробірки для лабораторного аналізу" loading="lazy">
+          <div>
+            <h3 class="text-xl font-semibold text-slate-900">Лабораторні аналізи</h3>
+            <p class="mt-2 text-sm leading-6 text-slate-700">Забір матеріалу вдома та результати в особистому кабінеті. Вартість уточніть під час запису.</p>
+            <a class="mt-4 inline-flex min-h-11 items-center justify-center rounded-lg border border-slate-300 bg-white px-6 py-3 text-base font-semibold text-[#1E5BB8] transition-colors hover:bg-blue-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1E5BB8] focus-visible:ring-offset-2" href="#booking">Записатися на аналізи</a>
+          </div>
+        </article>
+
+        <section class="embedded-media" aria-labelledby="services-video-title">
+          <h3 id="services-video-title" class="embedded-media__title">Відео про наші послуги</h3>
+          <div class="video-embed">
+            <!-- Замініть VIDEO_ID на ідентифікатор потрібного YouTube-відео. -->
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/-Cyhf7nlvC4?si=jmvuifNh7sXSJYcM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- 5. TESTIMONIALS -->
+    <section class="bg-blue-50" aria-labelledby="reviews-title">
+      <div class="mx-auto max-w-6xl px-5 py-12 md:py-16">
+        <h2 id="reviews-title" class="max-w-2xl text-2xl font-semibold text-slate-900 md:text-3xl">Що кажуть пацієнти</h2>
+        <ul class="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <li>
+            <figure class="flex h-full flex-col rounded-xl bg-white p-6 shadow-sm">
+              <blockquote class="flex-1 text-base leading-6 text-slate-800"><p>Лікар приїхав за дві години після запису. Усе пояснили зрозуміло, а рецепт одразу з’явився в кабінеті.</p></blockquote>
+              <figcaption class="mt-4 text-sm"><span class="font-semibold text-slate-900">Олена К.</span> <span class="text-slate-600">— візит лікаря додому</span></figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure class="flex h-full flex-col rounded-xl bg-white p-6 shadow-sm">
+              <blockquote class="flex-1 text-base leading-6 text-slate-800"><p>Із дитиною, яка хворіла, їхати до клініки не довелося. Педіатр уважно все оглянув і дав чіткі рекомендації.</p></blockquote>
+              <figcaption class="mt-4 text-sm"><span class="font-semibold text-slate-900">Андрій М.</span> <span class="text-slate-600">— педіатрична допомога</span></figcaption>
+            </figure>
+          </li>
+          <li class="md:col-span-2 lg:col-span-1">
+            <figure class="flex h-full flex-col rounded-xl bg-white p-6 shadow-sm">
+              <blockquote class="flex-1 text-base leading-6 text-slate-800"><p>Ціну я побачила до підтвердження запису, без сюрпризів. Онлайн-консультація минула спокійно й по суті.</p></blockquote>
+              <figcaption class="mt-4 text-sm"><span class="font-semibold text-slate-900">Ірина Л.</span> <span class="text-slate-600">— телемедицина</span></figcaption>
+            </figure>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 6. CTA -->
+    <section id="booking" class="scroll-mt-4" aria-labelledby="cta-title">
+      <div class="mx-auto max-w-6xl px-5 py-12 md:py-16">
+        <div class="rounded-2xl bg-[#1E5BB8] px-6 py-10 text-white md:px-12 md:py-14">
+          <div class="grid items-center gap-8 lg:grid-cols-2">
+          <div>
+          <div class="max-w-2xl text-left">
+            <h2 id="cta-title" class="text-2xl font-semibold md:text-3xl">Запишіться на прийом сьогодні</h2>
+            <p class="mt-3 text-base leading-6 text-white">Оберіть послугу, зручний час і формат — вдома чи онлайн. Остаточну вартість побачите перед підтвердженням.</p>
+          </div>
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+            <a class="inline-flex min-h-11 items-center justify-center rounded-lg bg-white px-6 py-3 text-base font-semibold text-[#1E5BB8] transition-colors hover:bg-blue-50 active:bg-slate-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#1E5BB8]" href="/booking">Записатися на прийом</a>
+            <a class="inline-flex min-h-11 items-center justify-center rounded-lg border border-white px-6 py-3 text-base font-semibold text-white transition-colors hover:bg-[#17489A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#1E5BB8]" href="tel:+380442000000">Зателефонувати</a>
+          </div>
+          </div>
+          <img class="h-56 w-full rounded-xl object-cover lg:h-72" src="assets/images/05_online_booking.png" width="446" height="490" alt="Запис на прийом через смартфон: календар і вибір лікаря" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 7. FOOTER (з ЛР №6) -->
+  <footer id="help" class="bg-slate-900 text-white">
+    <div class="mx-auto max-w-6xl px-5 py-14">
+      <div class="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-4">
+        <section aria-label="Про клініку CarePoint">
+          <a class="inline-flex rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900" href="index.html" aria-label="CarePoint — на головну">
+            <img class="block h-auto w-44 rounded-lg bg-white px-3 py-2" src="assets/icons/carepoint-logo.png" width="720" height="163" alt="">
+          </a>
+          <p class="mt-4 max-w-sm text-sm leading-6 text-slate-300">Приватна клініка, що надає уважну медичну допомогу вдома та онлайн.</p>
+          <div class="mt-8">
+            <h2 class="text-base font-semibold leading-6">Корисні новини про здоров’я</h2>
+            <p class="mt-2 text-sm leading-6 text-slate-300">Поради та новини від команди CarePoint.</p>
+            <form class="mt-4" action="/subscribe" method="post">
+              <label class="mb-2 block text-sm font-medium" for="email">Електронна пошта</label>
+              <div class="flex flex-col gap-3 sm:flex-row">
+                <input class="min-h-11 min-w-0 flex-1 rounded border border-slate-500 bg-white px-3 py-2 text-sm text-slate-900 placeholder:text-slate-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900" id="email" name="email" type="email" autocomplete="email" required>
+                <button class="min-h-11 rounded bg-[#1E5BB8] px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-[#17489A] active:bg-[#123B7E] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900" type="submit">Підписатися</button>
+              </div>
+            </form>
+          </div>
+        </section>
+        <nav aria-label="Додаткова навігація">
+          <h2 class="text-base font-semibold leading-6">CarePoint</h2>
+          <ul class="mt-4 flex flex-col gap-3 text-sm leading-6 text-slate-300">
+            <li><a class="rounded-sm transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400" href="#main-content">Про клініку</a></li>
+            <li><a class="rounded-sm transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400" href="#help">Поширені запитання</a></li>
+            <li><a class="rounded-sm transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400" href="/account">Особистий кабінет</a></li>
+            <li><a class="rounded-sm transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400" href="#booking">Записатися на прийом</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Послуги CarePoint">
+          <h2 class="text-base font-semibold leading-6">Послуги</h2>
+          <ul class="mt-4 flex flex-col gap-3 text-sm leading-6 text-slate-300">
+            <li><a class="rounded-sm transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400" href="#services">Візит лікаря додому</a></li>
+            <li><a class="rounded-sm transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400" href="#services">Педіатрична допомога</a></li>
+            <li><a class="rounded-sm transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400" href="#services">Телемедицина</a></li>
+            <li><a class="rounded-sm transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400" href="#services">Лабораторні аналізи</a></li>
+          </ul>
+        </nav>
+        <section aria-labelledby="footer-contact-title">
+          <h2 class="text-base font-semibold leading-6" id="footer-contact-title">Контакти</h2>
+          <address class="mt-4 flex flex-col gap-3 text-sm not-italic leading-6 text-slate-300">
+            <a class="rounded-sm transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400" href="mailto:info@carepoint.example">info@carepoint.example</a>
+            <a class="rounded-sm transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400" href="tel:+380442000000">+380 44 200 00 00</a>
+          </address>
+          <div class="contact-map">
+            <h3 class="contact-map__title">Ми на карті</h3>
+            <div class="map-embed">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2102.5431069340384!2d24.034443523165073!3d49.83070287677375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473add5d80ceb54b%3A0x3b0eee0b0b3da5cc!2z0LLRg9C70LjRhtGPINCQ0YDRhdC40L_QtdC90LrQsCwgNiwg0JvRjNCy0ZbQsiwg0JvRjNCy0ZbQstGB0YzQutCwINC-0LHQu9Cw0YHRgtGMLCA3OTAwMA!5e0!3m2!1suk!2sua!4v1793382199112!5m2!1suk!2sua" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            </div>
+          </div>
+          <h3 class="mt-6 text-sm font-semibold leading-5">Соціальні мережі</h3>
+          <ul class="mt-3 flex flex-wrap gap-4 text-sm leading-6 text-slate-300">
+            <li><a class="rounded-sm transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400" href="https://www.instagram.com/" aria-label="CarePoint в Instagram">Instagram</a></li>
+            <li><a class="rounded-sm transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400" href="https://www.facebook.com/" aria-label="CarePoint у Facebook">Facebook</a></li>
+          </ul>
+        </section>
+      </div>
+      <div class="mt-12 flex flex-col gap-4 border-t border-slate-700 pt-6 text-sm leading-6 text-slate-300 sm:flex-row sm:items-center sm:justify-between">
+        <p>© 2026 CarePoint</p>
+        <nav aria-label="Юридична інформація">
+          <ul class="flex flex-wrap gap-x-5 gap-y-2">
+            <li><a class="rounded-sm transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400" href="/privacy">Конфіденційність</a></li>
+            <li><a class="rounded-sm transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400" href="/terms">Умови користування</a></li>
+            <li><a class="rounded-sm transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400" href="/cookie-settings">Налаштування cookie</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
