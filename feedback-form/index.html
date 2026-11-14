@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Форма зворотного зв'язку">
+    <title>Форма зворотного зв'язку</title>
+
+    <!-- Tailwind CSS CDN: для навчального проєкту. Для production рекомендовано збирати Tailwind локально. -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="script.js" defer></script>
+</head>
+<body class="min-h-screen bg-slate-50 text-slate-900">
+    <!-- Весь основний вміст сторінки блокується для взаємодії, поки відкрита модалка. -->
+    <main id="pageContent" class="flex min-h-screen items-center justify-center px-4 py-10 sm:px-6">
+        <section class="w-full max-w-2xl rounded-2xl bg-white p-5 shadow-lg sm:p-8" aria-labelledby="formTitle">
+            <div class="mb-8">
+                <h1 id="formTitle" class="text-2xl font-bold tracking-tight sm:text-3xl">
+                    Зворотний зв’язок
+                </h1>
+                <p class="mt-2 text-sm leading-6 text-slate-600">
+                    Заповніть форму, і ми зможемо ознайомитися з вашим зверненням.
+                    Поля, позначені зірочкою (*), обов’язкові.
+                </p>
+            </div>
+
+            <form id="feedbackForm" class="space-y-6" novalidate>
+                <div>
+                    <label for="username" class="mb-2 block text-sm font-medium text-slate-700">
+                        Ім’я *
+                    </label>
+                    <input
+                        type="text"
+                        id="username"
+                        name="username"
+                        autocomplete="name"
+                        required
+                        minlength="2"
+                        aria-describedby="username-error"
+                        class="w-full rounded-lg border border-slate-300 px-4 py-3 text-base outline-none transition placeholder:text-slate-400 focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
+                        placeholder="Введіть ваше ім’я"
+                    >
+                    <p id="username-error" class="mt-1 min-h-5 text-sm text-red-600" aria-live="polite"></p>
+                </div>
+
+                <div>
+                    <label for="email" class="mb-2 block text-sm font-medium text-slate-700">
+                        Email *
+                    </label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        autocomplete="email"
+                        inputmode="email"
+                        required
+                        aria-describedby="email-error"
+                        class="w-full rounded-lg border border-slate-300 px-4 py-3 text-base outline-none transition placeholder:text-slate-400 focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
+                        placeholder="example@email.com"
+                    >
+                    <p id="email-error" class="mt-1 min-h-5 text-sm text-red-600" aria-live="polite"></p>
+                </div>
+
+                <div>
+                    <label for="phone" class="mb-2 block text-sm font-medium text-slate-700">
+                        Телефон
+                        <span class="font-normal text-slate-500">(необов’язково)</span>
+                    </label>
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        autocomplete="tel"
+                        inputmode="tel"
+                        aria-describedby="phone-hint phone-error"
+                        class="w-full rounded-lg border border-slate-300 px-4 py-3 text-base outline-none transition placeholder:text-slate-400 focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
+                        placeholder="+380XXXXXXXXX"
+                    >
+                    <p id="phone-hint" class="mt-1 text-xs text-slate-500">
+                        Формат: +380 та 9 цифр. Пробіли, дужки й інші символи не допускаються.
+                    </p>
+                    <p id="phone-error" class="mt-1 min-h-5 text-sm text-red-600" aria-live="polite"></p>
+                </div>
+
+                <div>
+                    <label for="message" class="mb-2 block text-sm font-medium text-slate-700">
+                        Повідомлення *
+                    </label>
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows="5"
+                        required
+                        minlength="10"
+                        aria-describedby="message-error"
+                        class="w-full resize-y rounded-lg border border-slate-300 px-4 py-3 text-base outline-none transition placeholder:text-slate-400 focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
+                        placeholder="Введіть ваше повідомлення (не менше 10 символів)"
+                    ></textarea>
+                    <p id="message-error" class="mt-1 min-h-5 text-sm text-red-600" aria-live="polite"></p>
+                </div>
+
+                <div>
+                    <div class="flex items-start gap-3">
+                        <input
+                            type="checkbox"
+                            id="agreement"
+                            name="agreement"
+                            required
+                            aria-describedby="agreement-error"
+                            class="mt-1 h-4 w-4 shrink-0 rounded border-slate-300 text-blue-600 outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
+                        >
+                        <label for="agreement" class="text-sm leading-6 text-slate-700">
+                            Погоджуюся з політикою конфіденційності *
+                        </label>
+                    </div>
+                    <p id="agreement-error" class="mt-1 min-h-5 text-sm text-red-600" aria-live="polite"></p>
+                </div>
+
+                <button
+                    type="submit"
+                    class="w-full rounded-lg bg-blue-600 px-6 py-3 font-semibold text-white transition hover:bg-blue-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 active:bg-blue-800"
+                >
+                    Надіслати
+                </button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Модальне вікно розташоване поза pageContent, щоб основний вміст можна було зробити inert. -->
+    <div
+        id="successModal"
+        class="fixed inset-0 z-50 hidden items-center justify-center overflow-y-auto bg-slate-950/60 p-4"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalTitle"
+        aria-describedby="modalDescription"
+        aria-hidden="true"
+    >
+        <div class="my-auto w-full max-w-md rounded-2xl bg-white p-6 text-center shadow-2xl sm:p-8">
+            <div class="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-green-100">
+                <svg
+                    class="h-7 w-7 text-green-600"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 13l4 4L19 7"
+                    />
+                </svg>
+            </div>
+
+            <h2 id="modalTitle" class="mb-2 text-xl font-semibold text-slate-900">
+                Форму успішно перевірено!
+            </h2>
+
+            <p id="modalDescription" class="mb-6 text-sm leading-6 text-slate-600">
+                Це імітація успішного надсилання. Дані пройшли клієнтську перевірку,
+                але не були передані на сервер і не зберігалися.
+            </p>
+
+            <button
+                id="closeModal"
+                type="button"
+                class="rounded-lg bg-blue-600 px-6 py-3 font-semibold text-white transition hover:bg-blue-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
+            >
+                Закрити
+            </button>
+        </div>
+    </div>
+</body>
+</html>
