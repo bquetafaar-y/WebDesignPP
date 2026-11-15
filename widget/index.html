@@ -1,0 +1,283 @@
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Калькулятор вартості медичних послуг клініки CarePoint.">
+  <title>Калькулятор вартості послуг | CarePoint</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+
+  <!-- Основні стилі проєкту -->
+  <link rel="stylesheet" href="../css/style.css">
+
+  <!-- JavaScript віджета -->
+  <script src="widget.js" defer></script>
+</head>
+
+<body class="min-h-screen bg-slate-50 font-[Inter,sans-serif] text-slate-900 antialiased">
+
+  <!-- HEADER -->
+  <header class="border-b border-slate-200 bg-white">
+    <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-4">
+
+      <a href="../index.html"
+         class="rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1E5BB8]"
+         aria-label="CarePoint — на головну">
+
+        <img
+          src="../assets/icons/carepoint-logo.png"
+          alt="CarePoint"
+          class="block h-auto w-40"
+        >
+      </a>
+
+      <a href="../index.html"
+         class="inline-flex min-h-10 items-center justify-center rounded-lg border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1E5BB8]">
+        На головну
+      </a>
+
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main id="main-content" class="mx-auto max-w-6xl px-5 py-10 md:py-16">
+
+    <section class="mx-auto max-w-3xl">
+
+      <!-- Заголовок -->
+      <div class="mb-8 text-center">
+        <p class="text-sm font-semibold uppercase tracking-wide text-teal-700">
+          CarePoint
+        </p>
+
+        <h1 class="mt-2 text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
+          Калькулятор вартості послуг
+        </h1>
+
+        <p class="mt-4 text-base leading-7 text-slate-600">
+          Оберіть медичний напрям, послугу та спеціаліста,
+          щоб попередньо розрахувати вартість обслуговування.
+        </p>
+      </div>
+
+      <!-- Форма калькулятора -->
+      <form
+        id="medical-form"
+        class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm md:p-8"
+        novalidate
+      >
+
+        <!-- Медичний напрям -->
+        <div class="mb-6">
+          <label
+            for="medical-direction"
+            class="mb-2 block text-sm font-semibold text-slate-800"
+          >
+            1. Медичний напрям
+          </label>
+
+          <select
+            id="medical-direction"
+            name="direction"
+            required
+            class="min-h-12 w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm text-slate-800 outline-none transition focus:border-[#1E5BB8] focus:ring-2 focus:ring-blue-100"
+          >
+            <option value="">Оберіть медичний напрям</option>
+            <option value="cardiology">Кардіологія</option>
+            <option value="therapy">Терапія</option>
+            <option value="dermatology">Дерматологія</option>
+            <option value="neurology">Неврологія</option>
+            <option value="gynecology">Гінекологія</option>
+          </select>
+        </div>
+
+        <!-- Медична послуга -->
+        <div class="mb-6">
+          <label
+            for="medical-service"
+            class="mb-2 block text-sm font-semibold text-slate-800"
+          >
+            2. Медична послуга
+          </label>
+
+          <select
+            id="medical-service"
+            name="service"
+            disabled
+            required
+            class="min-h-12 w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm text-slate-800 outline-none transition focus:border-[#1E5BB8] focus:ring-2 focus:ring-blue-100 disabled:bg-white disabled:text-slate-500 disabled:cursor-not-allowed"
+          >
+            <option value="">Оберіть медичну послугу</option>
+          </select>
+        </div>
+
+        <!-- Спеціаліст -->
+        <div class="mb-6">
+          <label
+            for="medical-doctor"
+            class="mb-2 block text-sm font-semibold text-slate-800"
+          >
+            3. Спеціаліст
+          </label>
+
+          <select
+            id="medical-doctor"
+            name="doctor"
+            disabled
+            required
+            class="min-h-12 w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm text-slate-800 outline-none transition focus:border-[#1E5BB8] focus:ring-2 focus:ring-blue-100 disabled:bg-white disabled:text-slate-500 disabled:cursor-not-allowed"
+          >
+            <option value="">Спочатку оберіть послугу</option>
+          </select>
+        </div>
+
+        <!-- Тип консультації -->
+        <div id="visit-type-group" class="mb-6 hidden">
+
+          <fieldset>
+            <legend class="mb-3 text-sm font-semibold text-slate-800">
+              4. Тип консультації
+            </legend>
+
+            <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+
+              <label class="flex cursor-pointer items-center gap-3 rounded-lg border border-slate-200 p-4 transition hover:border-[#1E5BB8] hover:bg-blue-50">
+                <input
+                  type="radio"
+                  name="visitType"
+                  value="first"
+                  class="h-4 w-4 accent-[#1E5BB8]"
+                >
+
+                <span class="text-sm text-slate-700">
+                  Первинна консультація
+                </span>
+              </label>
+
+              <label class="flex cursor-pointer items-center gap-3 rounded-lg border border-slate-200 p-4 transition hover:border-[#1E5BB8] hover:bg-blue-50">
+                <input
+                  type="radio"
+                  name="visitType"
+                  value="repeat"
+                  class="h-4 w-4 accent-[#1E5BB8]"
+                >
+
+                <span class="text-sm text-slate-700">
+                  Повторна консультація
+                </span>
+              </label>
+
+            </div>
+          </fieldset>
+
+        </div>
+
+        <!-- Додаткові послуги -->
+        <div class="mb-8">
+          <h2 class="mb-3 text-sm font-semibold text-slate-800">
+            Додаткові послуги
+          </h2>
+
+          <div
+            id="additional-services"
+            class="flex flex-col gap-3 rounded-lg bg-slate-800 p-4"
+          >
+            <p class="text-sm text-slate-300">
+              Спочатку оберіть медичний напрям.
+            </p>
+          </div>
+        </div>
+
+        <!-- Повідомлення про помилки -->
+        <div
+          id="calculator-errors"
+          class="mb-6 hidden rounded-lg border border-red-200 bg-red-50 p-4"
+          role="alert"
+          aria-live="assertive"
+        >
+          <p
+            id="calculator-error-message"
+            class="text-sm font-medium text-red-700"
+          ></p>
+        </div>
+
+        <!-- Результат розрахунку -->
+        <section
+          class="rounded-xl bg-blue-50 p-5 md:p-6"
+          aria-labelledby="result-heading"
+          aria-live="polite"
+        >
+
+          <h2
+            id="result-heading"
+            class="text-lg font-semibold text-slate-900"
+          >
+            Результат розрахунку
+          </h2>
+
+          <div
+            id="price-details"
+            class="mt-4 flex flex-col gap-3 text-sm text-slate-600"
+          ></div>
+
+          <div class="mt-5 flex items-center justify-between gap-4 border-t border-blue-200 pt-5">
+
+            <span class="text-base font-semibold text-slate-800">
+              Загальна вартість:
+            </span>
+
+            <span
+              id="total-price"
+              class="text-2xl font-bold text-[#1E5BB8]"
+            >
+              0 ₴
+            </span>
+
+          </div>
+
+        </section>
+
+        <!-- Кнопка -->
+        <button
+          id="medical-submit"
+          type="submit"
+          disabled
+          class="mt-6 inline-flex min-h-12 w-full items-center justify-center rounded-lg bg-[#1E5BB8] px-6 py-3 text-base font-semibold text-white transition-colors enabled:cursor-pointer enabled:hover:bg-[#17489A] enabled:active:bg-[#123B7E] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1E5BB8] focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:bg-slate-300 disabled:hover:bg-slate-300 disabled:active:bg-slate-300"
+        >
+          Підготувати запис
+        </button>
+
+        <p class="mt-4 text-center text-xs leading-5 text-slate-500">
+          * Імена спеціалістів, стаж і ціни наведені для демонстрації.
+          Остаточну вартість медичних послуг необхідно уточнювати під час запису.
+        </p>
+
+      </form>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="mt-10 bg-slate-900 text-white">
+    <div class="mx-auto max-w-6xl px-5 py-8 text-center">
+
+      <p class="text-sm text-slate-300">
+        © 2026 CarePoint. Усі права захищені.
+      </p>
+
+      <a
+        href="../index.html"
+        class="mt-3 inline-block text-sm text-blue-300 transition-colors hover:text-white"
+      >
+        Повернутися на головну сторінку
+      </a>
+
+    </div>
+  </footer>
+
+</body>
+</html>
