@@ -1,0 +1,57 @@
+name: Deploy to Vercel
+
+on:
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Check and Deploy
+    runs-on: ubuntu-latest
+
+    env:
+      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+
+    steps:
+      # 1. Отримання коду з GitHub
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. Перевірка наявності основних файлів
+      - name: Check project files
+        run: |
+          test -f index.html || (echo "index.html not found!" && exit 1)
+          test -d . || exit 1
+          echo "Project files check passed!"
+
+      # 3. Встановлення Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # 4. Перевірка HTML
+      - name: Validate HTML
+        run: |
+          npx --yes html-validate index.html
+
+      # 5. Встановлення Vercel CLI
+      - name: Install Vercel CLI
+        run: npm install --global vercel@latest
+
+      # 6. Отримання конфігурації Vercel
+      - name: Pull Vercel Environment
+        run: vercel pull --yes --environment=production
+
+      # 7. Підготовка проєкту до деплою
+      - name: Build Project
+        run: vercel build --prod
+
+      # 8. Публікація сайту
+      - name: Deploy to Vercel
+        run: vercel deploy --prebuilt --prod

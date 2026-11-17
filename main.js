@@ -1,6 +1,12 @@
 'use strict';
 
 document.addEventListener('DOMContentLoaded', () => {
+  const deferredStylesheet = document.getElementById('deferred-site-styles');
+
+  if (deferredStylesheet) {
+    deferredStylesheet.rel = 'stylesheet';
+  }
+
   const loadScript = (src) => new Promise((resolve, reject) => {
     const script = document.createElement('script');
     script.src = src;
@@ -117,6 +123,23 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }).catch((error) => console.error(error));
   });
+
+  const videoButton = document.querySelector('.video-embed__play');
+
+  if (videoButton) {
+    videoButton.addEventListener('click', () => {
+      const iframe = document.createElement('iframe');
+      iframe.width = '560';
+      iframe.height = '315';
+      iframe.src = `https://www.youtube-nocookie.com/embed/${encodeURIComponent(videoButton.dataset.youtubeId)}?autoplay=1`;
+      iframe.title = 'Відео про наші послуги';
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+      iframe.allowFullscreen = true;
+
+      videoButton.replaceWith(iframe);
+    });
+  }
 
   const typedElement = document.getElementById('hero-typed');
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;

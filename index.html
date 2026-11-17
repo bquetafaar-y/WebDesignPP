@@ -7,7 +7,7 @@
   <meta name="description" content="CarePoint: візит лікаря додому, телемедицина та лабораторні аналізи. Прозорі ціни й запис за кілька хвилин.">
   <link rel="preload" href="css/tailwind.css" as="style">
   <link rel="stylesheet" href="css/tailwind.css">
-  <link rel="preload" href="css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link id="deferred-site-styles" rel="preload" href="css/style.css" as="style">
   <noscript><link rel="stylesheet" href="css/style.css"></noscript>
   <script src="main.js" defer></script>
 </head>
@@ -146,7 +146,10 @@
           <h3 id="services-video-title" class="embedded-media__title">Відео про наші послуги</h3>
           <div class="video-embed">
             <!-- Замініть VIDEO_ID на ідентифікатор потрібного YouTube-відео. -->
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/-Cyhf7nlvC4?si=jmvuifNh7sXSJYcM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+            <button class="video-embed__play" type="button" data-youtube-id="-Cyhf7nlvC4" aria-label="Відтворити відео про наші послуги">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg>
+              <span>Відтворити відео про наші послуги</span>
+            </button>
           </div>
         </section>
       </div>
