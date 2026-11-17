@@ -5,16 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Медичний центр CarePoint — приватна клініка та онлайн-запис до лікаря</title>
   <meta name="description" content="CarePoint: візит лікаря додому, телемедицина та лабораторні аналізи. Прозорі ціни й запис за кілька хвилин.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css">
-  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js" defer></script>
+  <link rel="preload" href="css/tailwind.css" as="style">
+  <link rel="stylesheet" href="css/tailwind.css">
+  <link rel="preload" href="css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="css/style.css"></noscript>
   <script src="main.js" defer></script>
 </head>
 <body class="bg-slate-50 font-[Inter,sans-serif] text-base leading-6 text-slate-900 antialiased">
@@ -25,7 +19,7 @@
   <header class="border-b border-slate-200 bg-white">
     <div class="mx-auto flex max-w-6xl items-center justify-between gap-6 px-5 py-3">
       <a class="shrink-0 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1E5BB8] focus-visible:ring-offset-2" href="index.html" aria-label="CarePoint — на головну">
-        <img class="block h-auto w-40" src="assets/icons/carepoint-logo.png" width="720" height="163" alt="">
+        <img class="block h-auto w-40" src="assets/icons/carepoint-logo.webp" width="1310" height="283" alt="">
       </a>
       <nav class="hidden flex-1 items-center justify-center md:flex" aria-label="Головна навігація">
         <ul class="flex flex-wrap items-center justify-center gap-6">
@@ -66,7 +60,7 @@
             <a class="inline-flex min-h-11 items-center justify-center rounded-lg border border-slate-300 bg-white px-6 py-3 text-base font-semibold text-[#1E5BB8] transition-colors hover:bg-blue-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1E5BB8] focus-visible:ring-offset-2" href="#services">Переглянути послуги</a>
           </div>
         </div>
-        <img class="h-auto w-full max-w-md justify-self-center rounded-2xl object-cover lg:justify-self-end" src="assets/images/06_doctor_patient.png" width="443" height="490" alt="Лікар показує пацієнтці дані на планшеті під час консультації">
+        <img class="h-auto w-full max-w-md justify-self-center rounded-2xl object-cover lg:justify-self-end" src="assets/images/06_doctor_patient.webp" width="417" height="471" alt="Лікар показує пацієнтці дані на планшеті під час консультації" fetchpriority="high">
       </div>
     </section>
 
@@ -76,17 +70,17 @@
         <h2 id="benefits-title" class="max-w-2xl text-2xl font-semibold text-slate-900 md:text-3xl">Чому пацієнти обирають CarePoint</h2>
         <ul class="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           <li class="rounded-xl bg-white p-6 shadow-sm">
-            <img class="mb-4 h-12 w-12 object-contain" src="assets/icons/securityl3.png" alt="" width="48" height="48">
+            <img class="mb-4 h-12 w-12 object-contain" src="assets/icons/securityl3.svg" alt="" width="48" height="48" loading="lazy">
             <h3 class="text-lg font-semibold text-slate-900">Турбота вдома</h3>
             <p class="mt-2 text-sm leading-6 text-slate-700">Зручна допомога поруч: лікар приїжджає до вас, а прості питання можна вирішити онлайн.</p>
           </li>
           <li class="rounded-xl bg-white p-6 shadow-sm">
-            <img class="mb-4 h-12 w-12 object-contain" src="assets/icons/analyticsl3.png" alt="" width="48" height="48">
+            <img class="mb-4 h-12 w-12 object-contain" src="assets/icons/analyticsl3.svg" alt="" width="48" height="48" loading="lazy">
             <h3 class="text-lg font-semibold text-slate-900">Прозорі ціни</h3>
             <p class="mt-2 text-sm leading-6 text-slate-700">Вартість відома заздалегідь. Остаточну суму ви бачите перед підтвердженням запису.</p>
           </li>
           <li class="rounded-xl bg-white p-6 shadow-sm md:col-span-2 lg:col-span-1">
-            <img class="mb-4 h-12 w-12 object-contain" src="assets/icons/speedl3.png" alt="" width="48" height="48">
+            <img class="mb-4 h-12 w-12 object-contain" src="assets/icons/speedl3.svg" alt="" width="48" height="48" loading="lazy">
             <h3 class="text-lg font-semibold text-slate-900">Щоденна підтримка</h3>
             <p class="mt-2 text-sm leading-6 text-slate-700">Ми на зв’язку сім днів на тиждень. Результати й рекомендації зберігаються у вашому кабінеті.</p>
           </li>
@@ -104,7 +98,7 @@
         <ul class="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           <li>
             <article class="flex h-full flex-col rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md focus-within:ring-2 focus-within:ring-[#1E5BB8]">
-              <img class="mb-5 h-48 w-full rounded-lg object-cover object-top" src="assets/images/01_general_practitioner.png" width="440" height="490" alt="Лікарка в білому халаті зі стетоскопом за столом" loading="lazy">
+              <img class="mb-5 h-48 w-full rounded-lg object-cover object-top" src="assets/images/01_general_practitioner.webp" width="440" height="492" alt="Лікарка в білому халаті зі стетоскопом за столом" loading="lazy">
               <h3 class="text-xl font-semibold text-slate-900">Візит лікаря додому</h3>
               <p class="mt-2 text-sm leading-6 text-slate-700">Огляд, план лікування та електронний рецепт без поїздки до клініки.</p>
               <ul class="mb-6 mt-4 flex flex-col gap-1 text-sm leading-6 text-slate-700">
@@ -116,7 +110,7 @@
           </li>
           <li>
             <article class="flex h-full flex-col rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md focus-within:ring-2 focus-within:ring-[#1E5BB8]">
-              <img class="mb-5 h-48 w-full rounded-lg object-cover object-top" src="assets/images/02_pediatric_visit (1).png" width="440" height="490" alt="Педіатр слухає дитину стетоскопом, поруч мама" loading="lazy">
+              <img class="mb-5 h-48 w-full rounded-lg object-cover object-top" src="assets/images/02_pediatric_visit (1).webp" width="430" height="346" alt="Педіатр слухає дитину стетоскопом, поруч мама" loading="lazy">
               <h3 class="text-xl font-semibold text-slate-900">Педіатрична допомога</h3>
               <p class="mt-2 text-sm leading-6 text-slate-700">Огляд і рекомендації для дитини без черг та поїздок до клініки.</p>
               <ul class="mb-6 mt-4 flex flex-col gap-1 text-sm leading-6 text-slate-700">
@@ -128,7 +122,7 @@
           </li>
           <li class="sm:col-span-2 lg:col-span-1">
             <article class="flex h-full flex-col rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md focus-within:ring-2 focus-within:ring-[#1E5BB8]">
-              <img class="mb-5 h-48 w-full rounded-lg object-cover object-top" src="assets/images/04_telemedicine.png" width="440" height="490" alt="Жінка спілкується з лікарем по відеозв’язку на ноутбуці" loading="lazy">
+              <img class="mb-5 h-48 w-full rounded-lg object-cover object-top" src="assets/images/04_telemedicine.webp" width="435" height="470" alt="Жінка спілкується з лікарем по відеозв’язку на ноутбуці" loading="lazy">
               <h3 class="text-xl font-semibold text-slate-900">Телемедицина</h3>
               <p class="mt-2 text-sm leading-6 text-slate-700">Відповіді лікаря та план лікування без поїздки до клініки.</p>
               <ul class="mb-6 mt-4 flex flex-col gap-1 text-sm leading-6 text-slate-700">
@@ -140,7 +134,7 @@
           </li>
         </ul>
         <article class="mt-6 grid grid-cols-1 items-center gap-6 rounded-xl border border-slate-200 bg-white p-6 shadow-sm md:grid-cols-2">
-          <img class="h-48 w-full rounded-lg object-cover md:h-56" src="assets/images/03_lab_tests.png" width="443" height="492" alt="Медик у рукавичках готує пробірки для лабораторного аналізу" loading="lazy">
+          <img class="h-48 w-full rounded-lg object-cover md:h-56" src="assets/images/03_lab_tests.webp" width="411" height="492" alt="Медик у рукавичках готує пробірки для лабораторного аналізу" loading="lazy">
           <div>
             <h3 class="text-xl font-semibold text-slate-900">Лабораторні аналізи</h3>
             <p class="mt-2 text-sm leading-6 text-slate-700">Забір матеріалу вдома та результати в особистому кабінеті. Вартість уточніть під час запису.</p>
@@ -152,7 +146,7 @@
           <h3 id="services-video-title" class="embedded-media__title">Відео про наші послуги</h3>
           <div class="video-embed">
             <!-- Замініть VIDEO_ID на ідентифікатор потрібного YouTube-відео. -->
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/-Cyhf7nlvC4?si=jmvuifNh7sXSJYcM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/-Cyhf7nlvC4?si=jmvuifNh7sXSJYcM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
           </div>
         </section>
       </div>
@@ -168,27 +162,27 @@
         <div class="carepoint-swiper swiper mt-8" role="region" aria-roledescription="карусель" aria-label="Напрями медичної допомоги">
           <div class="swiper-wrapper">
             <article class="swiper-slide carepoint-slide rounded-xl border border-slate-200 bg-slate-50 p-5">
-              <img class="carepoint-slide__image" src="assets/images/carHome.png" alt="Лікарка оглядає пацієнтку вдома" loading="lazy">
+              <img class="carepoint-slide__image" src="assets/images/carHome.webp" width="635" height="421" alt="Лікарка оглядає пацієнтку вдома" loading="lazy">
               <h3 class="mt-4 text-lg font-semibold text-slate-900">Лікар удома</h3>
               <p class="mt-2 text-sm leading-6 text-slate-700">Професійний огляд і рекомендації у звичному для вас середовищі.</p>
             </article>
             <article class="swiper-slide carepoint-slide rounded-xl border border-slate-200 bg-slate-50 p-5">
-              <img class="carepoint-slide__image" src="assets/images/carPed.png" alt="Педіатр оглядає дитину" loading="lazy">
+              <img class="carepoint-slide__image" src="assets/images/carPed.webp" width="265" height="364" alt="Педіатр оглядає дитину" loading="lazy">
               <h3 class="mt-4 text-lg font-semibold text-slate-900">Педіатрична допомога</h3>
               <p class="mt-2 text-sm leading-6 text-slate-700">Уважна турбота про здоров’я дітей та підтримка для батьків.</p>
             </article>
             <article class="swiper-slide carepoint-slide rounded-xl border border-slate-200 bg-slate-50 p-5">
-              <img class="carepoint-slide__image" src="assets/images/cerOnl.png" alt="Лікар проводить онлайн-консультацію" loading="lazy">
+              <img class="carepoint-slide__image" src="assets/images/cerOnl.webp" width="174" height="364" alt="Лікар проводить онлайн-консультацію" loading="lazy">
               <h3 class="mt-4 text-lg font-semibold text-slate-900">Онлайн-консультація</h3>
               <p class="mt-2 text-sm leading-6 text-slate-700">Поговоріть із лікарем дистанційно та отримайте план подальших дій.</p>
             </article>
             <article class="swiper-slide carepoint-slide rounded-xl border border-slate-200 bg-slate-50 p-5">
-              <img class="carepoint-slide__image" src="assets/images/carLab.png" alt="Фахівчиня готує лабораторний аналіз" loading="lazy">
+              <img class="carepoint-slide__image" src="assets/images/carLab.webp" width="182" height="365" alt="Фахівчиня готує лабораторний аналіз" loading="lazy">
               <h3 class="mt-4 text-lg font-semibold text-slate-900">Лабораторні аналізи</h3>
               <p class="mt-2 text-sm leading-6 text-slate-700">Забір аналізів удома та доступ до результатів у вашому кабінеті.</p>
             </article>
             <article class="swiper-slide carepoint-slide rounded-xl border border-slate-200 bg-slate-50 p-5">
-              <img class="carepoint-slide__image" src="assets/images/carSup.png" alt="Фахівчиня служби підтримки CarePoint" loading="lazy">
+              <img class="carepoint-slide__image" src="assets/images/carSup.webp" width="181" height="367" alt="Фахівчиня служби підтримки CarePoint" loading="lazy">
               <h3 class="mt-4 text-lg font-semibold text-slate-900">Підтримка пацієнтів</h3>
               <p class="mt-2 text-sm leading-6 text-slate-700">Допоможемо зорієнтуватися в послугах і спланувати наступний крок.</p>
             </article>
@@ -213,22 +207,22 @@
         <h2 id="carepoint-gallery-title" class="mt-2 max-w-2xl text-2xl font-semibold text-slate-900 md:text-3xl">Клініка та команда</h2>
         <div class="carepoint-gallery mt-8">
           <a class="carepoint-gallery__item" href="assets/images/interior.png" data-fancybox="carepoint-gallery" data-caption="Інтер’єр медичного центру CarePoint" aria-label="Інтер’єр медичного центру CarePoint">
-            <img class="carepoint-gallery__image" src="assets/images/interior.png" alt="Інтер’єр медичного центру CarePoint" loading="lazy">
+            <img class="carepoint-gallery__image" src="assets/images/interior.webp" width="768" height="738" alt="Інтер’єр медичного центру CarePoint" loading="lazy">
           </a>
           <a class="carepoint-gallery__item" href="assets/images/staff1.png" data-fancybox="carepoint-gallery" data-caption="Терапевт — проводить загальну діагностику, лікує поширені захворювання та допомагає підтримувати здоров’я." aria-label="Терапевт — проводить загальну діагностику, лікує поширені захворювання та допомагає підтримувати здоров’я.">
-            <img class="carepoint-gallery__image" src="assets/images/staff1.png" alt="Лікарка CarePoint" loading="lazy">
+            <img class="carepoint-gallery__image" src="assets/images/staff1.webp" width="362" height="363" alt="Лікарка CarePoint" loading="lazy">
           </a>
           <a class="carepoint-gallery__item" href="assets/images/staff2.png" data-fancybox="carepoint-gallery" data-caption="Кардіолог — діагностує та лікує захворювання серця і серцево-судинної системи." aria-label="Кардіолог — діагностує та лікує захворювання серця і серцево-судинної системи.">
-            <img class="carepoint-gallery__image" src="assets/images/staff2.png" alt="Лікар CarePoint" loading="lazy">
+            <img class="carepoint-gallery__image" src="assets/images/staff2.webp" width="359" height="364" alt="Лікар CarePoint" loading="lazy">
           </a>
           <a class="carepoint-gallery__item" href="assets/images/staff3.png" data-fancybox="carepoint-gallery" data-caption="Педіатр — піклується про здоров’я дітей, проводить огляди та лікує дитячі захворювання." aria-label="Педіатр — піклується про здоров’я дітей, проводить огляди та лікує дитячі захворювання.">
-            <img class="carepoint-gallery__image" src="assets/images/staff3.png" alt="Педіатр CarePoint" loading="lazy">
+            <img class="carepoint-gallery__image" src="assets/images/staff3.webp" width="367" height="365" alt="Педіатр CarePoint" loading="lazy">
           </a>
           <a class="carepoint-gallery__item" href="assets/images/staff4.png" data-fancybox="carepoint-gallery" data-caption="Лікар лабораторної діагностики — проводить і контролює лабораторні дослідження для точної діагностики." aria-label="Лікар лабораторної діагностики — проводить і контролює лабораторні дослідження для точної діагностики.">
-            <img class="carepoint-gallery__image" src="assets/images/staff4.png" alt="Лікар лабораторної діагностики CarePoint" loading="lazy">
+            <img class="carepoint-gallery__image" src="assets/images/staff4.webp" width="359" height="360" alt="Лікар лабораторної діагностики CarePoint" loading="lazy">
           </a>
           <a class="carepoint-gallery__item" href="assets/images/staff5.png" data-fancybox="carepoint-gallery" data-caption="Медична сестра — допомагає лікарям, проводить медичні процедури та піклується про комфорт пацієнтів." aria-label="Медична сестра — допомагає лікарям, проводить медичні процедури та піклується про комфорт пацієнтів.">
-            <img class="carepoint-gallery__image" src="assets/images/staff5.png" alt="Фахівчиня CarePoint" loading="lazy">
+            <img class="carepoint-gallery__image" src="assets/images/staff5.webp" width="360" height="363" alt="Фахівчиня CarePoint" loading="lazy">
           </a>
         </div>
       </div>
@@ -276,7 +270,7 @@
             <a class="inline-flex min-h-11 items-center justify-center rounded-lg border border-white px-6 py-3 text-base font-semibold text-white transition-colors hover:bg-[#17489A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#1E5BB8]" href="tel:+380442000000">Зателефонувати</a>
           </div>
           </div>
-          <img class="h-56 w-full rounded-xl object-cover lg:h-72" src="assets/images/05_online_booking.png" width="446" height="490" alt="Запис на прийом через смартфон: календар і вибір лікаря" loading="lazy">
+          <img class="h-56 w-full rounded-xl object-cover lg:h-72" src="assets/images/05_online_booking.webp" width="429" height="472" alt="Запис на прийом через смартфон: календар і вибір лікаря" loading="lazy">
           </div>
         </div>
       </div>
@@ -290,7 +284,7 @@
       <div class="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-4">
         <section aria-label="Про клініку CarePoint">
           <a class="inline-flex rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900" href="index.html" aria-label="CarePoint — на головну">
-            <img class="block h-auto w-44 rounded-lg bg-white px-3 py-2" src="assets/icons/carepoint-logo.png" width="720" height="163" alt="">
+            <img class="block h-auto w-44 rounded-lg bg-white px-3 py-2" src="assets/icons/carepoint-logo.webp" width="1310" height="283" alt="">
           </a>
           <p class="mt-4 max-w-sm text-sm leading-6 text-slate-300">Приватна клініка, що надає уважну медичну допомогу вдома та онлайн.</p>
           <div class="mt-8">
